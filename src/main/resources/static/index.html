@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>University Management</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+    <div>
+        <p class="eyebrow">SHARDA UNIVERSITY</p>
+        <h1>University Management</h1>
+    </div>
+    <span class="connection"><span class="dot"></span> Local database API</span>
+</header>
+<main class="layout">
+    <aside class="sidebar">
+        <h2>Database tables</h2>
+        <nav id="resource-nav" aria-label="Database tables"></nav>
+        <p class="hint">Create, view, edit, and delete records in the class MySQL database.</p>
+    </aside>
+    <section class="content">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">CRUD WORKSPACE</p>
+                <h2 id="resource-title">Departments</h2>
+            </div>
+            <button id="new-record" class="button primary" type="button">+ New record</button>
+        </div>
+        <div id="notice" class="notice" role="status" aria-live="polite"></div>
+        <section id="editor" class="panel editor" hidden>
+            <div class="panel-heading">
+                <h3 id="editor-title">New record</h3>
+                <button id="cancel-edit" class="button quiet" type="button">Cancel</button>
+            </div>
+            <form id="record-form">
+                <div id="form-fields" class="form-grid"></div>
+                <button class="button primary" type="submit">Save record</button>
+            </form>
+        </section>
+        <section class="panel">
+            <div class="panel-heading">
+                <div>
+                    <h3>Records</h3>
+                    <p id="record-count" class="muted">Loading records…</p>
+                </div>
+                <button id="refresh" class="button quiet" type="button">Refresh</button>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr id="table-head"></tr></thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+        </section>
+        <p class="footnote">API endpoints use <code>/api</code>. Foreign keys are entered as their numeric IDs.</p>
+    </section>
+</main>
+</body>
+</html>
